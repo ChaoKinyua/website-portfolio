@@ -1,27 +1,79 @@
+/* Top Navigation Bar */
 .topnav {
-    background-color: #333;
-    overflow: hidden;
+    background-color: #222;     /* Darker background for modern look */
+    position: fixed;            /* Sticks to the top of the page */
+    top: 0;
+    left: 10;
+    right: 10;
+    width: 100%;                /* Full width */
+    z-index: 1000;              /* Always on top */
+    display: flex;              /* Flexbox for easy alignment */
+    justify-content: center;  /* Align links at the center*/
+    align-items: center;        
+    padding: 15px 40px;         /* Space around content */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Subtle shadow */
 }
 
-.topnav {
-    float:right;
-    color:#f2f2f2;
-    text-align: center;
-    padding:20px 30px;
-    text-decoration:none;
-    font-size:17px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif ;
-    font-style: inherit;
-    animation: backwards;
+/* Navigation Links */
+.topnav a {
+    color: #f2f2f2;             /* Light text */
+    text-decoration: none;      
+    font-size: 17px;
+    font-family: "Lucida Console", Courier, monospace;
+    margin-left: 15px;          /* Space between links */
+    padding: 8px 12px;
+    transition: all 0.3s ease;  /* Smooth hover effect */
+    text-overflow: ellipsis;
 }
 
-.topnav a:hover{
-    background-color: #8a9f93;
+/* Hover Effect */
+.topnav a:hover {
+    background-color: #8a9f93;  
     color: #0fefac;
-    animation-play-state: running;
+    border-radius: 5px;
 }
 
+/* Active Link */
 .topnav a.active {
-    background-color: #907b1e;
+    background-color: #907b1e;  /* Golden accent */
     color: white;
+    border-radius: 5px;
+}
+
+/* Add some space below navbar so content is not hidden */
+body {
+    margin: 0;
+    padding-top: 70px; /* equal to navbar height */
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;     /* makes it round */
+    object-fit: cover;      /* keeps proportions */
+    border: 3px solid #333;
+    margin: 20px auto;           /* adds spacing around it */
+}
+
+section#Home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* center horizontally */
+    justify-content: center; /* center vertically */
+    min-height: 100vh;     /* full screen height */
+    text-align: center;
+    background-attachment: fixed;
+    background-color: #8a9f93;
+    font-family: "Lucida Console", Courier, monospace;
+}
+section#about  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* center horizontally */
+    justify-content: left; /* center vertically */
+    min-height: 100vh;     /* full screen height */
+    text-align: left;
+    background-attachment: fixed;
+    background-color: #8a9f93;
+    font-family: cursive;
 }
